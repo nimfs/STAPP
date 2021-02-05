@@ -8,33 +8,35 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@magenta/image@0.2.1/dist/magentaimage.min.js"></script>
     <script src="script.js" defer></script>
-    <script data-ad-client="ca-pub-8476120171333168" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- <script data-ad-client="ca-pub-8476120171333168" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
   </head>
   <body>
+    <div class="loadercontainer" id='loader' style="display:none;"><div class="loader"></div></div>
     <div class="container">
       <div class="left">
         <h1>
-          <b>Arbitrary</b> Style Transfer with <a href="https://www.npmjs.com/package/@magenta/image">magenta.js</a>
+          Stylized
         </h1>
       </div>
     </div>
 
-    <div class="container">
-      <div class="left">
+    <div class="container" >
+      <div class="left" id='inputs'>
         <div class="frame">
-          <h2>Step 1. <label>upload photo <input type="file" onchange="loadContent(event)"></label></h2>
-          <img id="content" class="image" crossorigin="anonymous" src="https://cdn.glitch.com/93893683-46da-4058-829c-a05792722f2b%2Fcontent.jpg?1545163443723"/>
+          <h2><label>Select Your photo <input type="file" onchange="loadContent(event)"></label></h2>
+          <img id="content" class="image" crossorigin="anonymous" src=""/>
         </div>
         <div class="right">
           <div class="frame">
-             <h2>Step 2. <label>upload style <input type="file" onchange="loadStyle(event)"></label></h2>
+             <h2><label>Select a style <input type="file" onchange="loadStyle(event)"></label></h2>
              <img id="style" class="image" crossorigin="anonymous" src="https://cdn.glitch.com/93893683-46da-4058-829c-a05792722f2b%2Fstyle.jpg?1545163447216" />
           </div>
         </div>
+        <button  onclick="applytransform()">Create</button>
       </div>
 
-      <div class="frame">
-        <h2 class="dark">Step 3. <span id="loading">Transmogrifying ...</span><span id="ready" hidden>Profit!</span></h2>
+      <div class="frame" id='result'>
+        <h2 class="dark"><span id="loading">Transmogrifying ...</span><span id="ready" hidden>Profit!</span></h2>
         <canvas id="stylized" height="250px"></canvas>
       </div>
     </div>
