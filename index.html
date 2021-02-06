@@ -13,31 +13,46 @@
   <body>
     <div class="loadercontainer" id='loader' style="display:none;"><div class="loader"></div></div>
     <div class="container">
-      <div class="left">
+      <div class="left" style="padding-top:3%">
         <h1>
-          Stylized
+          <strong>Stylized</strong>
         </h1>
       </div>
     </div>
+    <hr style="margin:0px"/>
+    <hr style="margin:0px"/>
 
     <div class="container" >
-      <div class="left" id='inputs'>
+      <div class="left" id='inputs' style="padding-bottom:3%">
         <div class="frame">
           <h2><label>Select Your photo <input type="file" onchange="loadContent(event)"></label></h2>
-          <img id="content" class="image" crossorigin="anonymous" src=""/>
+          <img id="content" class="image" style="display:none" crossorigin="anonymous" src=""/>
         </div>
         <div class="right">
           <div class="frame">
-             <h2><label>Select a style <input type="file" onchange="loadStyle(event)"></label></h2>
-             <img id="style" class="image" crossorigin="anonymous" src="https://cdn.glitch.com/93893683-46da-4058-829c-a05792722f2b%2Fstyle.jpg?1545163447216" />
+             <h2><label>Upload a Style<input type="file" onchange="loadStyle(event)"></label></h2>
+             <img id="style" class="image" style="display:none" crossorigin="anonymous" src="" />
+             <h5>Or Select a Style</h5>
+             <div class="imageContainer">
+               <div class="Box">
+                 <img id="style" class="card" onclick="loadfromoptions(this.src)" crossorigin="anonymous" src="assets/style.jpg"/>
+                 <img id="style" class="card" onclick="loadfromoptions(this.src)" crossorigin="anonymous" src="assets/paint.jpg"/>
+                 <img id="style" class="card" onclick="loadfromoptions(this.src)" crossorigin="anonymous" src="https://cdn.glitch.com/93893683-46da-4058-829c-a05792722f2b%2Fstyle.jpg?1545163447216"/>
+                 <img id="style" class="card" onclick="loadfromoptions(this.src)" crossorigin="anonymous" src="https://cdn.glitch.com/93893683-46da-4058-829c-a05792722f2b%2Fstyle.jpg?1545163447216"/>
+                 <img id="style" class="card" onclick="loadfromoptions(this.src)" crossorigin="anonymous" src="https://cdn.glitch.com/93893683-46da-4058-829c-a05792722f2b%2Fstyle.jpg?1545163447216"/>
+                 <img id="style" class="card" onclick="loadfromoptions(this.src)" crossorigin="anonymous" src="https://cdn.glitch.com/93893683-46da-4058-829c-a05792722f2b%2Fstyle.jpg?1545163447216"/>
+               </div>
+             </div>
           </div>
         </div>
-        <button  onclick="applytransform()">Create</button>
+
+        <button  onclick="applytransform()" class='cbutton'>Create</button>
       </div>
 
-      <div class="frame" id='result'>
-        <h2 class="dark"><span id="loading">Transmogrifying ...</span><span id="ready" hidden>Profit!</span></h2>
+      <div class="frame" id='result' style="padding-bottom:3%">
+        <h2 class="dark"><span id="loading">Please wait...</span><span id="ready" hidden>Done!</span></h2>
         <canvas id="stylized" height="250px"></canvas>
+        <button  onclick="hideshow('redo')" class='cbutton'>Redo</button>
       </div>
     </div>
 

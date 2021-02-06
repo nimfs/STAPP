@@ -83,10 +83,14 @@ function loadImage(event, imgElement) {
 }
 
 function loadContent(event) {
+  var content = document.getElementById("content");
+  content.style.display="block";
   loadImage(event, contentImg);
 }
 
 function loadStyle(event) {
+  var style = document.getElementById("style");
+  style.style.display="block";
   loadImage(event, styleImg);
 }
 
@@ -100,4 +104,12 @@ function stopLoading() {
   loading.hidden = true;
   notLoading.hidden = false;
   canvas.style.opacity = 1;
+}
+
+function loadfromoptions(url){
+  console.log('selecting');
+  var style = document.getElementById("style");
+  style.style.display="block";
+
+  style.src = url;
 }

@@ -51,6 +51,7 @@ a:link, a:visited {
   color: white;
   padding: 24px;
   margin: 12px;
+  text-align: center;
 }
 
 .frame.flex {
@@ -95,9 +96,26 @@ a:link, a:visited {
   padding: 8px 24px;
   font-size: 14px;
   text-align: center;
+  border-radius: 15px;
+  transition: all 0.25s ease-in 0s;
+}
+
+.cbutton {
+  cursor: pointer;
+  border: none;
+  vertical-align: middle;
+  background: #f7f1f8;
+  color: #2d1832;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 16px;
+  padding: 8px 24px;
+  font-size: 14px;
+  text-align: center;
   border-radius: 3px;
   transition: all 0.25s ease-in 0s;
 }
+
 
 input[type="file"] {
   width: 0;
@@ -109,6 +127,12 @@ input[type="file"] {
 
 .image {
   height: 256px; /* TODO */
+  margin: 0 auto;
+  display: block;
+}
+
+.imagethumb {
+  height: 100px; /* TODO */
   margin: 0 auto;
   display: block;
 }
@@ -152,4 +176,33 @@ canvas {
     text-align: center;
     width: 100%;
   }
+}
+
+.card{
+    /* width: 90%; */
+    height: 130px;
+    flex: 0 0 auto;
+    cursor: pointer;
+    padding-right:2px;
+}
+
+.Box{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    width: 100%;
+}
+
+.imageContainer{
+    width: 500px;
+    height: 160px;
+    display: flex;
+    margin: 0 auto;
+
+}
+
+@media (max-width: 500px){
+    .Container{
+        width: 100%;
+    }
 }
